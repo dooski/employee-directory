@@ -39,6 +39,27 @@ class App extends Component {
     this.setState({ dir: dir })
   }
 
+  handleRoleFilter = ({ target }) => {
+    let dir
+    switch (target.value) {
+      case 'All':
+        dir = data.filter((a) => (a.role !== null))
+        break
+      case 'Managing Editor':
+        dir = data.filter((a) => (a.role === 'Managing Editor'))
+        break
+      case 'Poetry Editor':
+        dir = data.filter((a) => (a.role === 'Poetry Editor'))
+        break
+      case 'Artist':
+        dir = data.filter((a) => (a.role === 'Artist'))
+        break
+      default:
+        dir = data
+        break
+    }
+    this.setState({ dir: dir })
+  }
 
 
   render() {
@@ -63,11 +84,19 @@ class App extends Component {
                   <br></br>Last Name
                   </th>
                 <th>
-                  <button className='uk-button-small' onClick={this.emailAZ}>&#x2191;</button>
-                  <button className='uk-button-small' onClick={this.emailZA}>&#x2193;</button>
+                  <button className='uk-button-small' onClick={this.handleEmailAZ}>&#x2191;</button>
+                  <button className='uk-button-small' onClick={this.handleEmailZA}>&#x2193;</button>
                   <br></br>Email Address
                   </th>
-                <th>Role</th>
+                <th>
+                  <select className='uk-select uk-form-width-small' defaultValue={this.state.selectValue} onChange={this.handleRoleFilter}>
+                    <option value="All">All</option>
+                    <option value="Managing Editor">Managing Editor</option>
+                    <option value="Poetry Editor">Poetry Editor</option>
+                    <option value="Artist">Artist</option>
+                  </select>
+                  <br></br>Role
+                  </th>
               </tr>
             </thead>
             <tbody>
