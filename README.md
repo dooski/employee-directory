@@ -29,5 +29,5 @@ to start the app locally. Access at localhost:3000.
 ![Pineapple Magazine Employee Directory](./screenshot.PNG)  
 
 5. LINKS
-GitHub repo: https://github.com/dooski/employee-directory
-Deployed application: https://immense-mesa-81928.herokuapp.com/
+- GitHub repo: https://github.com/dooski/employee-directory
+- Deployed application: https://immense-mesa-81928.herokuapp.com/
